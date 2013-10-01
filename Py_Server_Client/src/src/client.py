@@ -57,7 +57,7 @@ def send_msg(serverIP, port, sourceID, data):
         response = json.loads(responseStr)
         print 'Finish rcv response'
         
-        return response
+        return response['data']
         
     except socket.error as se:
         print "Socket error:", se

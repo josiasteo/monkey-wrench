@@ -8,10 +8,10 @@ import time
 '''
 @summary: 
 Test Case no.: 0001
-Source: PC
-Target: Arduino
-Scenario: PC is sending an Action to Arduino
-Result: Passed
+Source: R-Pi
+Target: PC
+Scenario: R-Pi sending sensor info to PC
+Result: 
 '''
 def case0001():
     # === Info needed to send a JSON message ===
@@ -19,10 +19,11 @@ def case0001():
     serverIP = 'localhost'
     port = 13373
     # Specifies the identity of the message's source
-    sourceID = '0'
+    sourceID = 'R-Pi'
     
     # === Creating data to send ===
-    data = { 0: "F,10,R,90,L,90" }
+    arrOfReadings = [ "L,1,C,0,R,45", "L,1,C,0,R,45", "L,1,C,1,R,45" ]
+    data = { 0:  arrOfReadings }
     
     # === Call send_msg method from client helper class ===
     returnVal = client.send_msg(serverIP, port, sourceID, data)
@@ -34,7 +35,6 @@ def case0001():
     else:
         print 'Message was not sent to:', serverIP
     
-    print 'Check correctness of message received by server.'
 
 '''
 @summary: 
