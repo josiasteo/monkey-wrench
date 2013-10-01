@@ -22,7 +22,7 @@ def case0001():
     sourceID = 'R-Pi'
     
     # === Creating data to send ===
-    arrOfReadings = [ "L,1,C,0,R,45", "L,1,C,0,R,45", "L,1,C,1,R,45" ]
+    arrOfReadings = [ "L,1,C,0,R,42", "L,1,C,0,R,42", "L,1,C,1,R,42" ]
     data = { 0:  arrOfReadings }
     
     # === Call send_msg method from client helper class ===
