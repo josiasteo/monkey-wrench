@@ -31,7 +31,7 @@ def send_msg(serverIP, port, sourceID, data):
         print 'Success - Connected to server:', serverIP, 'port:', port
         
         # Specify data to be sent
-        msg = { 'source':sourceID, 'data': (data) }
+        msg = { 'source':sourceID, 'data': data }
         
         # Encode msg in JSON
         msg_json = json.dumps(msg) + '\n'
